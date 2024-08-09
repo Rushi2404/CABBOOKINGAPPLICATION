@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Progress Indicator">
+        <lightning-progress-indicator current-step={currentStep} type="base" variant="base">
+
+            <lightning-progress-step label="Step1" value="1" onclick={handlleOnStepClick}></lightning-progress-step>
+            <lightning-progress-step label="Step2" value="2" onclick={handlleOnStepClick}></lightning-progress-step>
+            <lightning-progress-step label="Step3" value="3" onclick={handlleOnStepClick}></lightning-progress-step>
+
+        </lightning-progress-indicator>
+    
+        <template if:true={isStepOne}>
+            <div>
+                <h1 class="slds-align_absolute-center slds-m-around_medium"><b>Welcome to MyCab Services, We are currently serve in the following location</b></h1>
+                <c-map></c-map>
+            </div>
+        </template>
+
+        <template if:true={isStepTwo}>
+            <div>
+                <c-cab-reservation onnavigate={handleNavigate}></c-cab-reservation>
+            </div>
+        </template>
+
+        <template if:true={isStepThree}>
+            <div class="slds-align_absolute-center">
+                <b>Thank You..... Hope you have a wonderfull Journey.....</b>
+            </div>
+        </template>
+
+        <div class="footer-container">
+        <template if:true={isEnablePrev}>
+            <lightning-button label="Previous Step" 
+                            onclick={handlePrevious} 
+                            class="slds-m-around_medium slds-align_absolute-center">
+            </lightning-button>
+
+        </template>
+
+        <template if:true={isEnableNext}>
+            <lightning-button label="Next Step" 
+                              onclick={handleNext} 
+                              class="slds-m-around_medium slds-align_absolute-center" >
+            </lightning-button>
+
+        </template>
+        
+        <template if:true={isEnableFinidh}>
+            <lightning-button label="Finish" 
+                               onclick={handleFinish} 
+                               class="slds-m-around_medium slds-align_absolute-center">
+            </lightning-button>
+
+        </template>
+    
+    </div>
+    </lightning-card>
+
+    
+</template>

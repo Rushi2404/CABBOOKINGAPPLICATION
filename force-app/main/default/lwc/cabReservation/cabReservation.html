@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="MyCar Cab Resevation" icon-name="custom:custom31">
+        <lightning-record-form object-api-name={objectApiName}
+                                record-id={recordId}
+                                fields={fields}
+                                onsuccess={handlesucess}>
+        </lightning-record-form>
+    </lightning-card>
+
+
+        <div>
+        <template if:true={showmodal}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closemodal}>
+            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text" >Cancel and close</span>
+            </button>
+            <div class="slds-modal__header" >
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1" >Cab Booking</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p>
+                <lightning-card icon-name="custom:custom31">
+                <lightning-record-view-form record-id={recordId}
+                                            object-api-name="Cab_Reservation__c">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="Travel_Date_Time__c"></lightning-output-field>
+                    <lightning-output-field field-name="Travel_From__c"></lightning-output-field>
+                    <lightning-output-field field-name="Travel_To__c"></lightning-output-field>
+                    <lightning-output-field field-name="Adhar_Number__c"></lightning-output-field>
+                    
+                    <lightning-output-field field-name="Customer_Email__c"></lightning-output-field>
+                    <lightning-output-field field-name="Number_of_travellers__c"></lightning-output-field>
+                    <lightning-output-field field-name="Vehicle__c"></lightning-output-field>
+                    <lightning-output-field field-name="Price_per_Km__c"></lightning-output-field>
+                    <lightning-output-field field-name="Driver__c"></lightning-output-field>
+                    <lightning-output-field field-name="Driver_Email__c"></lightning-output-field>
+                
+                </lightning-record-view-form>
+            </lightning-card>
+                
+            </p>
+            </div>
+            <div class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closemodal}>Cancel</button>
+            <button class="slds-button slds-button_brand" onclick={savemodal}>Save</button>
+            </div>
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+        </div>
+</template>

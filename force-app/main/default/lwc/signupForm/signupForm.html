@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="MyCab SignUP Page">
+    <lightning-record-edit-form object-api-name="Cab_Customer__c" onsuccess={handlesuccess}>
+        <lightning-input-field field-name="Name" required="true"></lightning-input-field>
+        <lightning-input-field field-name="Customer_Email__c" required="true"></lightning-input-field>
+        <lightning-input-field field-name="Username__c" required="true"></lightning-input-field>
+        <lightning-input-field field-name="Password__c" type="Password" required="true"></lightning-input-field>
+        
+        <lightning-button variant="brand" label="Submit" type="submit" onclick={handleSubmit} class="slds-align_absolute-center"></lightning-button>
+    </lightning-record-edit-form>
+    </lightning-card>
+</template>
+
+

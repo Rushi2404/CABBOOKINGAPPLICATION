@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="MyCab Login Page">
+        <lightning-input label="username" name="username" value={username} onchange={handleUsernameChange}></lightning-input>
+        <lightning-input label="Password" name="Password" value={password} type="password" onchange={handlePasswordChange}></lightning-input>
+        
+        <lightning-button label="Login" variant="brand" onclick={handleLogin}></lightning-button>
+    
+    </lightning-card>
+</template>

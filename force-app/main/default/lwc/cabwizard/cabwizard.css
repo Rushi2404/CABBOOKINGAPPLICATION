@@ -1,0 +1,10 @@
+
+    .footer-container {
+        display: flex;
+        justify-content: center; /* Align buttons in the center of the footer */
+        gap: 2px; /* Add spacing between buttons */
+        margin-top: 5px; /* Add margin above the footer */
+        padding: 5px 0; /* Add padding for better appearance */
+        border-top: 1px solid #eaeaea; /* Optional: Add a border to separate footer */
+    }
+
